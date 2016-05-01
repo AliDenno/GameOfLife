@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 
 public class Game_of_Life {
 	
@@ -35,20 +34,6 @@ public class Game_of_Life {
 		System.out.println("Fick Boris");
 	}
 	
-	
 
 }
-=======
 
-public class Game_of_Life {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		System.out.println("Hi Sony");
-		System.out.println("Hello from eclipseAli");
-		System.out.println("Fick Boris");
-		System.out.println("Egit test");
-	}
-
-}
->>>>>>> origin/master
