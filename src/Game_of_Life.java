@@ -63,6 +63,12 @@ public class Game_of_Life {
         case 2:  glider_Gun(Grid);
         		 break;
 		}
+         if(100>2)
+         {
+        	 System.out.println("Enter a number: ");
+         }
+         else
+        	 System.out.println("Bye");      
 	}
 }
 
