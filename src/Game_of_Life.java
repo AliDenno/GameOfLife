@@ -32,6 +32,12 @@ public class Game_of_Life {
 		//initialize the grid 101*82
 		//input methods (1->5)
 		//print the choice on the grid
+		System.out.println("Hi Sony");
+		System.out.println("Hello from eclipseAli");
+		System.out.println("Fick Boris");
+		
+		// 2D 101 x 82 sized array
+		int[][] Grid = new int[101][82];
 	}
 	
 
