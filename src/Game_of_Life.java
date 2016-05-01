@@ -51,7 +51,7 @@ public class Game_of_Life {
 		Scanner reader = new Scanner(System.in);  // Reading from System.in
 		System.out.println("Enter a number: ");
 		int choice = reader.nextInt(); // Scans the next token of the input as an int.
-
+		int x=11;
 		
 		
 		// 2D 101 x 82 sized array
@@ -63,12 +63,14 @@ public class Game_of_Life {
         case 2:  glider_Gun(Grid);
         		 break;
 		}
+
          if(100>2)
          {
         	 System.out.println("Enter a number: ");
          }
          else
         	 System.out.println("Bye");      
+
 	}
 }
 
