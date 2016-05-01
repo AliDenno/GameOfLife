@@ -1,29 +1,22 @@
 # README #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+### Programming Assignment: B ###
 
-### What is this repository for? ###
+* Implement a two-dimensional (d=2) (Cellular) Automaton on a 101 × 82 sized, rectangular
+	grid. Use a torus toplogy to manage the boundary of the grid. If you use console output
+	(ASCII-art) take characters that are aligned with the content they represent and that are
+	easy to distinguish from each other
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
 
-### How do I get set up? ###
+### The project ###
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
+Conway’s Game of Life:
+Make the user choose the initial pattern to start with, from the following list of 5 possibilities:
+blinker, glider, r-pentomino, Gosper’s Glider Gun, and a pattern (class 3 or 4) of your
+own choice.
+Write the total number of cells living for each time step into a file (one ASCII value per line).
 
 ### Who do I talk to? ###
 
-* Repo owner or admin
-* Other community or team contact
+* Ali Denno (Ali Denno)
+* MOhamad Denno facebook (mhd Denno)
