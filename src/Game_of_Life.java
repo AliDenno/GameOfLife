@@ -18,14 +18,14 @@ public class Game_of_Life {
 		//print a r_pentomino on the initial grid
 		return grid;
 	}
-	public static int[][] glider_Gun(int[][] grid)
-	{
-		//print a glider_Gun on the initial grid
-		return grid;
-	}
 	public static int[][] your_own_Choice(int[][] grid)
 	{
 		//print a your_own_Choice on the initial grid
+		return grid;
+	}
+	public static int[][] glider_Gun(int[][] grid)
+	{
+		//print a glider_Gun on the initial grid
 		return grid;
 	}
 	
