@@ -32,6 +32,9 @@ public class Game_of_Life {
 		System.out.println("Hi Sony");
 		System.out.println("Hello from eclipseAli");
 		System.out.println("Fick Boris");
+		
+		// 2D 101 x 82 sized array
+		int[][] Grid = new int[101][82];
 	}
 	
 
