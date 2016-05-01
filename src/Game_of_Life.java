@@ -48,15 +48,18 @@ public class Game_of_Life {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//initialize the grid 101*82
+		System.out.println("Fick Boris");
 		//input methods (1->5)
 		//print the choice on the grid
 		System.out.println("Hi Sony");
 		System.out.println("Hello from eclipseAli");
-		System.out.println("Fick Boris");
+		
 		
 		// 2D 101 x 82 sized array
 		int[][] Grid = new int[101][82];
 		save_2DArray_tofile(Grid);
+		
+		System.out.println("HiFuck Face");
 	}
 	
 
