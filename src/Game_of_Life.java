@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 import java.io.*;
 public class Game_of_Life {
@@ -66,25 +67,41 @@ public class Game_of_Life {
 		// TODO Auto-generated method stub
 		Scanner reader = new Scanner(System.in);  // Reading from System.in
 		System.out.println("Enter a number: ");
-		int choice = reader.nextInt(); // Scans the next token of the input as an int.
-		int x=11;
-		
+		int choice=0;
+	
+		try
+		{
+			choice = reader.nextInt(); // Scans the next token of the input as an int.
+		}
+		catch(InputMismatchException exception)
+		{
+		  System.out.println("This is not an integer.");
+		}
+	
+		reader.close();
 		
 		// 2D 101 x 82 sized array
 		int[][] Grid = new int[101][82];
 		save_2DArray_tofile(Grid);
 		switch (choice) {
-        case 1:  blinker(Grid);
+		case 0:  break;
+        case 1:  System.out.println("1 launched");
+        	     blinker(Grid);
                  break;
-        case 2:  glider(Grid);
+        case 2:  System.out.println("2 launched"); 
+        		 glider(Grid);
         		 break;
-        case 3: r_pentomino(Grid);
+        case 3:  System.out.println("3 launched");
+        	     r_pentomino(Grid);
         		 break;
-        case 4:  your_own_Choice(Grid);
+        case 4:  System.out.println("4 launched");
+        		 your_own_Choice(Grid);
         		 break;
-        case 5: glider_Gun(Grid);
-		 		break;
+        case 5:  System.out.println("5 launched");
+        	     glider_Gun(Grid);
+		 		 break;
 		}
+	
 		System.out.println("NUMMUM: "+ alive_cells_count(0,Grid) );
 	}
 }
