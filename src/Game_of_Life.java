@@ -28,12 +28,28 @@ public class Game_of_Life {
 		//print a glider_Gun on the initial grid
 		return grid;
 	}
-	
+	public static int alive_cells_count(int step,int[][] grid){
+		int aliveCount =0;
+		PrintStream ps;
+		try {
+		ps = new PrintStream(new FileOutputStream("AliveCells.DATA"));
+		for(int row=0;row < grid.length;row++){
+			for(int col=0; col < grid[row].length;col++){
+					aliveCount=(grid[row][col]==1) ? aliveCount+1: aliveCount;		
+			}
+		}
+		ps.println("In Step: "+step+" There is "+aliveCount+" alive cells");
+		ps.close();
+		} catch (FileNotFoundException e) {
+		System.out.println(e.getMessage());
+		}
+		return aliveCount;
+	}
 	public static void save_2DArray_tofile(int[][] grid)
 	{
 		PrintStream ps;
 		try {
-		ps = new PrintStream(new FileOutputStream("NUMBER.DATA"));
+		ps = new PrintStream(new FileOutputStream("Grid.DATA"));
 		for(int row=0;row < grid.length;row++){
 			for(int col=0; col < grid[row].length;col++){
 			String s = Integer.toString(grid[row][col]);
@@ -58,19 +74,18 @@ public class Game_of_Life {
 		int[][] Grid = new int[101][82];
 		save_2DArray_tofile(Grid);
 		switch (choice) {
-        case 1:  glider_Gun(Grid);
+        case 1:  blinker(Grid);
                  break;
-        case 2:  glider_Gun(Grid);
+        case 2:  glider(Grid);
         		 break;
+        case 3: r_pentomino(Grid);
+        		 break;
+        case 4:  your_own_Choice(Grid);
+        		 break;
+        case 5: glider_Gun(Grid);
+		 		break;
 		}
-
-         if(100>2)
-         {
-        	 System.out.println("Enter a number: ");
-         }
-         else
-        	 System.out.println("Bye");      
-
+		System.out.println("NUMMUM: "+ alive_cells_count(0,Grid) );
 	}
 }
 
