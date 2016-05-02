@@ -118,6 +118,72 @@ public class Game_of_Life {
 		}
 		return aliveCount;
 	}
+	//this method to decide what will happen to the grid after one step
+	public static int[][] one_time_step_simulation(int[][] grid)
+	{
+		/*for(int row=0;row < grid.length;row++){
+			for(int col=0; col < grid[row].length;col++){
+				int sum=0;
+				// 2D row=101 x col=82 sized array
+				//torus toplogy sake
+				int row_border=0;
+				int col_border=0;
+				if(row-1<0)
+					row_border=100;
+				else
+					row_border=row-1;
+				if(col-1<0)
+					col_border=81;
+				else
+					col_border=col-1;
+				if(row+1==101)
+					row_border=0;
+				else
+					row_border=row+1;
+				if(col+1==82)
+					col_border=0;
+				else
+					col_border=col+1;
+				if(row-1<0)
+				{
+					row_border=100;
+					if(col-1<0)
+					{
+						col_border=81;
+				sum+=grid[row-1][col-1];
+					}
+				}
+				sum+=grid[row][col-1];
+				sum+=grid[row+1][col-1];
+				sum+=grid[row-1][col];
+				sum+=grid[row][col];
+				sum+=grid[row+1][col];
+				sum+=grid[row-1][col+1];
+				sum+=grid[row][col+1];
+				sum+=grid[row+1][col+1];
+			}
+
+		}
+			
+		return grid;*/
+	}
+	
+	//this method will take the sum of the segmant 3*3 matrix
+	//including the cell in the middle
+	//from (one_time_step_simulation) function and decide if this 
+	//cell will die ,live or birth ^_^
+	public static int die_live_birth_decision(int sum)
+	{
+		int result=0;
+		if(sum>3&&sum<3)
+			result=0;
+		if(sum==3)
+			result=1;
+
+		return result;
+	}
+	
+	
 	public static void save_2DArray_tofile(int[][] grid)
 	{
 		PrintStream ps;
