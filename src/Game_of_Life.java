@@ -14,7 +14,12 @@ public class Game_of_Life {
 	}
 	public static int[][] glider(int[][] grid)
 	{
-		//print a glider on the initial grid
+		//print a glider on the initial grid	
+		grid[row/2][col/2]=1;
+		grid[row/2][col/2+1]=1;
+		grid[row/2][col/2+2]=1;
+		grid[row/2+1][col/2+2]=1;
+		grid[row/2+2][col/2+1]=1;
 		return grid;
 	}
 	public static int[][] r_pentomino(int[][] grid)
@@ -22,16 +27,17 @@ public class Game_of_Life {
 		//print a r_pentomino on the initial grid
 		return grid;
 	}
-	public static int[][] your_own_Choice(int[][] grid)
-	{
-		//print a your_own_Choice on the initial grid
-		return grid;
-	}
 	public static int[][] glider_Gun(int[][] grid)
 	{
 		//print a glider_Gun on the initial grid
 		return grid;
 	}
+	public static int[][] your_own_Choice(int[][] grid)
+	{
+		//print a your_own_Choice on the initial grid
+		return grid;
+	}
+
 	public static int alive_cells_count(int step,int[][] grid){
 		int aliveCount =0;
 		PrintStream ps;
@@ -90,21 +96,22 @@ public class Game_of_Life {
 	
 		switch (choice) {
 		case 0:  break;
-        case 1:  System.out.println("1 launched");
+        case 1:  System.out.println("1.blinker launched");
         	     blinker(Grid);
                  break;
-        case 2:  System.out.println("2 launched"); 
+        case 2:  System.out.println("2.glider launched"); 
         		 glider(Grid);
         		 break;
-        case 3:  System.out.println("3 launched");
+        case 3:  System.out.println("3.r_pentomino launched");
         	     r_pentomino(Grid);
         		 break;
-        case 4:  System.out.println("4 launched");
+        case 4:  System.out.println("4.glider_Gun launched");
+			     glider_Gun(Grid);
+				 break;
+        case 5:  System.out.println("5.your_own_Choice launched");
         		 your_own_Choice(Grid);
         		 break;
-        case 5:  System.out.println("5 launched");
-        	     glider_Gun(Grid);
-		 		 break;
+
 		}
 		save_2DArray_tofile(Grid);
 		System.out.println("NUMMUM: "+ alive_cells_count(0,Grid) );
