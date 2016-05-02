@@ -7,6 +7,9 @@ public class Game_of_Life {
 	public static int[][] blinker(int[][] grid)
 	{
 		//print a blinker on the initial grid
+		grid[row/2][col/2]=1;
+		grid[row/2+1][col/2]=1;
+		grid[row/2+2][col/2]=1;
 		return grid;
 	}
 	public static int[][] glider(int[][] grid)
@@ -63,6 +66,8 @@ public class Game_of_Life {
 		System.out.println(e.getMessage());
 		}
 	}
+	static int row=101;
+	static int col=82;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner reader = new Scanner(System.in);  // Reading from System.in
@@ -81,8 +86,8 @@ public class Game_of_Life {
 		reader.close();
 		
 		// 2D 101 x 82 sized array
-		int[][] Grid = new int[101][82];
-		save_2DArray_tofile(Grid);
+		int[][] Grid = new int[row][col];
+	
 		switch (choice) {
 		case 0:  break;
         case 1:  System.out.println("1 launched");
@@ -101,7 +106,7 @@ public class Game_of_Life {
         	     glider_Gun(Grid);
 		 		 break;
 		}
-	
+		save_2DArray_tofile(Grid);
 		System.out.println("NUMMUM: "+ alive_cells_count(0,Grid) );
 	}
 }
