@@ -32,9 +32,22 @@ public class Game_of_Life {
 		grid[row/2+2][row/2]=1;
 		return grid;
 	}
+	// Ali Is Working on this 
 	public static int[][] glider_Gun(int[][] grid)
 	{
 		//print a glider_Gun on the initial grid
+		grid[5][1]=1;
+		grid[5][2]=1;
+		grid[6][2]=1;
+		grid[6][2]=1;
+		
+		grid[3][35]=1;
+		grid[3][36]=1;
+		grid[4][35]=1;
+		grid[4][36]=1;
+		
+		
+		
 		return grid;
 	}
 	public static int[][] your_own_Choice(int[][] grid)
