@@ -25,6 +25,11 @@ public class Game_of_Life {
 	public static int[][] r_pentomino(int[][] grid)
 	{
 		//print a r_pentomino on the initial grid
+		grid[row/2][row/2]=1;
+		grid[row/2][row/2+1]=1;
+		grid[row/2+1][row/2]=1;
+		grid[row/2+1][row/2-1]=1;
+		grid[row/2+2][row/2]=1;
 		return grid;
 	}
 	public static int[][] glider_Gun(int[][] grid)
