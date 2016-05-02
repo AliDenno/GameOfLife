@@ -80,9 +80,24 @@ public class Game_of_Life {
 		grid[7][17]=1;
 		return grid;
 	}
-	public static int[][] your_own_Choice(int[][] grid)
+	public static int[][] glider_Gun_with_eater(int[][] grid)
 	{
-		//print a your_own_Choice on the initial grid
+		//print a glider_Gun_with_eater on the initial grid
+		//the Glider
+		grid[row/2][col/2]=1;
+		grid[row/2][col/2+1]=1;
+		grid[row/2][col/2+2]=1;
+		grid[row/2+1][col/2+2]=1;
+		grid[row/2+2][col/2+1]=1;
+		
+		//the eater
+		grid[40][52]=1;
+		grid[40][53]=1;
+		grid[39][52]=1;
+		grid[38][53]=1;
+		grid[38][54]=1;
+		grid[38][55]=1;
+		grid[37][55]=1;
 		return grid;
 	}
 
@@ -156,8 +171,8 @@ public class Game_of_Life {
         case 4:  System.out.println("4.glider_Gun launched");
 			     glider_Gun(Grid);
 				 break;
-        case 5:  System.out.println("5.your_own_Choice launched");
-        		 your_own_Choice(Grid);
+        case 5:  System.out.println("5.glider_Gun_with_eater launched");
+        		glider_Gun_with_eater(Grid);
         		 break;
 
 		}
