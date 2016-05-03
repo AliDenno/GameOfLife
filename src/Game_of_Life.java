@@ -100,7 +100,13 @@ public class Game_of_Life {
 		grid[37][55]=1;
 		return grid;
 	}
-
+	
+	/** a function that will count the number of alive cells and then write the number on a file 
+	  * 
+	  * @param step in which step were the cells counted
+	  * @param The grid of data 
+	  *
+	*/
 	public static int alive_cells_count(int step,int[][] grid){
 		int aliveCount =0;
 		PrintStream ps;
@@ -119,7 +125,7 @@ public class Game_of_Life {
 		return aliveCount;
 	}
 	//this method to decide what will happen to the grid after one step
-	public static int[][] one_time_step_simulation(int[][] grid)
+	public static void one_time_step_simulation(int[][] grid)
 	{
 		/*for(int row=0;row < grid.length;row++){
 			for(int col=0; col < grid[row].length;col++){
@@ -183,7 +189,11 @@ public class Game_of_Life {
 		return result;
 	}
 	
-	
+	/** a function that takes the grid and write it to a file
+	  * 
+	  * @param The grid of data 
+	  *
+	*/
 	public static void save_2DArray_tofile(int[][] grid)
 	{
 		PrintStream ps;
