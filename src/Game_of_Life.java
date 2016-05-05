@@ -452,9 +452,13 @@ public class Game_of_Life {
 
 		}
 		save_2DArray_tofile(Grid,"Grid.Data");
+		int x=0;
+	    while(x<2){
 		GridStats = operateGrid(Grid,GridStats);
 		updateGrid(Grid,GridStats);
 		save_2DArray_tofile(Grid,"UGrid.Data");
+		x++;
+	    }
 		System.out.println("NUMMUM: "+ alive_cells_count(0,Grid) );
 	}
 }
