@@ -117,77 +117,14 @@ public class Game_of_Life {
 					aliveCount=(grid[row][col]==1) ? aliveCount+1: aliveCount;		
 			}
 		}
-		ps.println("In Step: "+step+" There is "+aliveCount+" alive cells");
+		ps.append("In Step: "+step+" There is "+aliveCount+" alive cells");
 		ps.close();
 		} catch (FileNotFoundException e) {
 		System.out.println(e.getMessage());
 		}
 		return aliveCount;
 	}
-	//this method to decide what will happen to the grid after one step
-	public static void one_time_step_simulation(int[][] grid)
-	{
-		/*for(int row=0;row < grid.length;row++){
-			for(int col=0; col < grid[row].length;col++){
-				int sum=0;
-				// 2D row=101 x col=82 sized array
-				//torus toplogy sake
-				int row_border=0;
-				int col_border=0;
-				if(row-1<0)
-					row_border=100;
-				else
-					row_border=row-1;
-				if(col-1<0)
-					col_border=81;
-				else
-					col_border=col-1;
-				if(row+1==101)
-					row_border=0;
-				else
-					row_border=row+1;
-				if(col+1==82)
-					col_border=0;
-				else
-					col_border=col+1;
-				if(row-1<0)
-				{
-					row_border=100;
-					if(col-1<0)
-					{
-						col_border=81;
-				sum+=grid[row-1][col-1];
-					}
-				}
-				sum+=grid[row][col-1];
-				sum+=grid[row+1][col-1];
-				sum+=grid[row-1][col];
-				sum+=grid[row][col];
-				sum+=grid[row+1][col];
-				sum+=grid[row-1][col+1];
-				sum+=grid[row][col+1];
-				sum+=grid[row+1][col+1];
-			}
 
-		}
-			
-		return grid;*/
-	}
-	
-	//this method will take the sum of the segmant 3*3 matrix
-	//including the cell in the middle
-	//from (one_time_step_simulation) function and decide if this 
-	//cell will die ,live or birth ^_^
-	public static int die_live_birth_decision(int sum)
-	{
-		int result=0;
-		if(sum>3&&sum<3)
-			result=0;
-		if(sum==3)
-			result=1;
-
-		return result;
-	}
 	
 	/** a function that operate on every cell of the grid and calculate the next value
 	  * 
@@ -416,7 +353,7 @@ public class Game_of_Life {
 		  System.out.println("This is not an integer.");
 		}
 	
-		reader.close();
+		
 		
 		// 2D 101 x 82 sized array
 		int[][] Grid = new int[row][col];
@@ -453,13 +390,17 @@ public class Game_of_Life {
 		}
 		save_2DArray_tofile(Grid,"Grid.Data");
 		int x=0;
-	    while(x<2){
+		System.out.println("How many steps do you want the program to proceed:");
+		int end=reader.nextInt();
+		reader.close();
+	    while(x<end){
 		GridStats = operateGrid(Grid,GridStats);
 		updateGrid(Grid,GridStats);
 		save_2DArray_tofile(Grid,"UGrid.Data");
 		x++;
+		System.out.println("Number of alive celles in step number "+ x +":"+ alive_cells_count(0,Grid));
 	    }
-		System.out.println("NUMMUM: "+ alive_cells_count(0,Grid) );
 	}
+	
 }
 
