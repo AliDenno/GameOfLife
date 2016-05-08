@@ -118,7 +118,9 @@ public class Game_of_Life {
 					aliveCount=(grid[row][col]==1) ? aliveCount+1: aliveCount;		
 			}
 		}
+
 		ps.append("In Step: "+step+" There is "+aliveCount+" alive cells \n");
+
 		ps.close();
 		} catch (FileNotFoundException e) {
 		System.out.println(e.getMessage());
@@ -392,10 +394,12 @@ public class Game_of_Life {
 		}
 		save_2DArray_tofile(Grid,"Grid.Data");
 		int x=0;
+
 		System.out.println("How many steps do you want the program to proceed:");
 		int end=reader.nextInt();
 		reader.close();
 	    while(x<end){
+
 		GridStats = operateGrid(Grid,GridStats);
 		updateGrid(Grid,GridStats);
 		save_2DArray_tofile(Grid,"UGrid.Data");

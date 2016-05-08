@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 In Step: 1 There is 12 alive cells 
 In Step: 2 There is 12 alive cells 
 In Step: 3 There is 12 alive cells 
@@ -98,3 +99,6 @@ In Step: 97 There is 0 alive cells
 In Step: 98 There is 0 alive cells 
 In Step: 99 There is 0 alive cells 
 In Step: 100 There is 0 alive cells 
+=======
+In Step: 0 There are 5 alive cells
+>>>>>>> Stashed changes
