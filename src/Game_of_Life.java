@@ -91,13 +91,14 @@ public class Game_of_Life {
 		grid[row/2+2][col/2+1]=1;
 		
 		//the eater
-		grid[40][52]=1;
-		grid[40][53]=1;
-		grid[39][52]=1;
-		grid[38][53]=1;
-		grid[38][54]=1;
-		grid[38][55]=1;
-		grid[37][55]=1;
+		grid[32][61]=1;
+		grid[32][62]=1;
+		grid[31][61]=1;
+		grid[30][62]=1;
+		grid[30][63]=1;
+		grid[30][64]=1;
+		grid[29][64]=1;
+		
 		return grid;
 	}
 	
@@ -110,14 +111,14 @@ public class Game_of_Life {
 	public static int alive_cells_count(int step,int[][] grid){
 		int aliveCount =0;
 		PrintStream ps;
-		try {
-		ps = new PrintStream(new FileOutputStream("AliveCells.DATA"));
+		try {	
+		ps = new PrintStream(new FileOutputStream(new File("AliveCells.DATA"),true));
 		for(int row=0;row < grid.length;row++){
 			for(int col=0; col < grid[row].length;col++){
 					aliveCount=(grid[row][col]==1) ? aliveCount+1: aliveCount;		
 			}
 		}
-		ps.append("In Step: "+step+" There is "+aliveCount+" alive cells");
+		ps.append("In Step: "+step+" There is "+aliveCount+" alive cells \n");
 		ps.close();
 		} catch (FileNotFoundException e) {
 		System.out.println(e.getMessage());
@@ -335,9 +336,10 @@ public class Game_of_Life {
 		}
 	}
 	
-	static int row=101;
-	static int col=82;
-	
+	//static int row=101;
+	//static int col=82;
+	static int row=82;
+	static int col=101;
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Scanner reader = new Scanner(System.in);  // Reading from System.in
@@ -398,8 +400,10 @@ public class Game_of_Life {
 		updateGrid(Grid,GridStats);
 		save_2DArray_tofile(Grid,"UGrid.Data");
 		x++;
-		System.out.println("Number of alive celles in step number "+ x +":"+ alive_cells_count(0,Grid));
+		//System.out.println("Number of alive celles in step number "+ x +":"+ alive_cells_count(0,Grid));
+		alive_cells_count(x,Grid);
 	    }
+	    System.out.println("done! the alive cells for each step are printed in AliveCells.DATA");
 	}
 	
 }
