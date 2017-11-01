@@ -19,4 +19,4 @@ Write the total number of cells living for each time step into a file (one ASCII
 ### Who do I talk to? ###
 
 * Ali Denno (Ali Denno)
-* MOhamad Denno facebook (mhd Denno)
+* Mohamad Denno facebook (mhd Denno)
